@@ -3,13 +3,14 @@ var addSoNguyenEl=document.getElementById('addSoNguyen');
 
 var numberArr = [];
 
-function hienThiKetQua(tongSoDuong, demSoDuong,soNhoNhat,soDuongNhoNhat,thuTuTangDan,) {
+function hienThiKetQua(tongSoDuong, demSoDuong,soNhoNhat,soDuongNhoNhat,thuTuTangDan,soChanCuoiCung,) {
   document.getElementById("cau1").innerText = tongSoDuong;
   document.getElementById("cau2").innerText = demSoDuong;
   document.getElementById("cau3").innerText = soNhoNhat;
   document.getElementById("cau4").innerText = soDuongNhoNhat;
   document.getElementById("cau7").innerText = thuTuTangDan;
-//   document.getElementById("cau5").innerText = soChanCuoiCung;
+  document.getElementById("cau5").innerText = soChanCuoiCung;
+  // document.getElementById("cau8").innerText = soNguyenToDT;
 
 }
 
@@ -37,10 +38,18 @@ for (i = 0, N = numberArr.length; i < N; i++) {
     if(currentValue>0)
     soDuongNhoNhat = Math.min(soDuongNhoNhat, currentValue)
 }
+for(let i= numberArr.length; i>=0 ;i--){
+  var soChanCuoiCung 
+  // var currentValue = numberArr[i]
+  if((numberArr[numberArr.length-1])%2==0){
+    soChanCuoiCung=numberArr[numberArr.length-1]
+  }
+  else if ((numberArr.length)%2==1){
+  soChanCuoiCung=-1
 
-
-
-  hienThiKetQua(tongSoDuong, demSoDuong,soNhoNhat,soDuongNhoNhat,thuTuTangDan,);
+  }
+}
+  hienThiKetQua(tongSoDuong, demSoDuong,soNhoNhat,soDuongNhoNhat,thuTuTangDan,soChanCuoiCung);
 
 }
 
